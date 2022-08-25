@@ -11,11 +11,26 @@
 	{
 		super();
 		loading = true;
-		SetFrameRateHUDString("");
+		SetFrameRateHUDString("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
 		FrameTime = 0;
 		FrameDelta = 0;
 		FrameDeltaTime = 0;
 		FrameRate = 0;
+		
+		this._x = 961;
+		this._y = 1040;
+		this._rotation = 0;
+		this._xscale = 75;
+		this._yscale = 75;
+	}
+	
+	public function setLocation(xpos: Number, ypos: Number, rot: Number, xscale: Number, yscale: Number): Void
+	{
+		this._x = xpos;
+		this._y = ypos;
+		this._rotation = rot;
+		this._xscale = xscale;
+		this._yscale = yscale;
 	}
 	
 	public function SetFrameTime(aFrameTime:Number):Void
@@ -33,14 +48,15 @@
 		FrameDeltaTime = aFrameDeltaTime;
 	}
 	
-	public function SetFrameRate(aFrameRate:Number):Void
-	{
-		FrameRate = aFrameRate;
-	}
-	
 	public function CreateFrameString()
 	{
 		FrameRateHUDString.text = "FrameRate: " + String(FrameRate);
+	}
+	
+	public function SetFrameRate(aFrameRate:Number):Void
+	{
+		FrameRate = aFrameRate;
+		CreateFrameString();
 	}
 	
 	public function SetFrameRateHUDString(aFrameRateHUDString:String):Void
