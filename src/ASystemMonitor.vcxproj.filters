@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{d7823d65-d2ba-47fe-988d-09936112578c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API">
+      <UniqueIdentifier>{65e71238-33db-4017-8d92-4212244b16e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ASystemMonitor">
+      <UniqueIdentifier>{c102b13d-6c1d-4115-9f69-0c19b5cfa22b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Events">
+      <UniqueIdentifier>{b741d280-2197-481e-b43e-48591976ba1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Settings">
+      <UniqueIdentifier>{24753641-cd9e-486c-8208-855f58f5fc2c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="prx.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="API.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="ASystemMonitor.cpp">
+      <Filter>ASystemMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="EventManger.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="API.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="ASystemMonitor.h">
+      <Filter>ASystemMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="PCH.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManger.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
