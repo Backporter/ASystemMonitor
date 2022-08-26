@@ -16,6 +16,9 @@
     <Filter Include="Settings">
       <UniqueIdentifier>{24753641-cd9e-486c-8208-855f58f5fc2c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hooks">
+      <UniqueIdentifier>{3191882f-cbce-423e-91de-6e3141850e26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="prx.cpp">
@@ -29,6 +32,9 @@
     </ClCompile>
     <ClCompile Include="EventManger.cpp">
       <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.cpp">
+      <Filter>Hooks</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="Settings.h">
       <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>Hooks</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

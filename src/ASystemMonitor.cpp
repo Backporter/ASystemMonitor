@@ -14,6 +14,8 @@ ASystemMonitor::ASystemMonitor()
 	}
 
 	ScaleformManger->LoadMovieEx(this, ASystemMonitor::MENU_NAME, [](ConsoleRE::GFxMovieDefImpl* a_def) -> void { });
+	
+	util = FrameUtil::Tracker::GetSingleton();
 }
 
 void ASystemMonitor::Register()
@@ -57,7 +59,6 @@ void ASystemMonitor::ToggleVisibility(bool mode)
 	overlayMenu->Movie->SetVisible(mode);
 }
 
-// FrameRateHUDString
 void ASystemMonitor::Update()
 {
 	ConsoleRE::IMenu* asystemmonitor = ConsoleRE::UI::GetMenu(&ASystemMonitorBS);
@@ -66,35 +67,27 @@ void ASystemMonitor::Update()
 	
 	if (true)
 	{
-		// ApplyLayout(asystemmonitor);
-		
-		ConsoleRE::GFxValue fake_framerate("Frame Rate: 59.96"); // static_cast<double>(59.96));
-		ConsoleRE::GFxValue textbox;
-
-		if (asystemmonitor->Movie->GetVariable(textbox, "TextField0"))
+		if (!IsSet)
 		{
-			textbox.SetText("Frame Rate: 59.96", false);
+			if (asystemmonitor->Movie->GetVariable(SetFrameRateHUDString, "FrameRateHUDString"))
+			{
+				IsSet = true;
+			}
 		}
+		
+
+		if (IsSet)
+		{
+			SetFrameRateHUDString.SetText(FrameRateString, false);
+		}
+		
 	}
-}
-
-void ASystemMonitor::ApplyLayout(ConsoleRE::IMenu* ASystemMonitor)
-{
-	if (!ASystemMonitor || !ASystemMonitor->Movie)
-		return;
-
-	ConsoleRE::GFxValue widget_xpos     = Settings::Settings::Singleton()->m_options.widget_xpos;
-	ConsoleRE::GFxValue widget_ypos     = Settings::Settings::Singleton()->m_options.widget_ypos;
-	ConsoleRE::GFxValue widget_rotation = Settings::Settings::Singleton()->m_options.widget_rotation;
-	ConsoleRE::GFxValue widget_xscale   = Settings::Settings::Singleton()->m_options.widget_xscale;
-	ConsoleRE::GFxValue widget_yscale   = Settings::Settings::Singleton()->m_options.widget_yscale;
-
-	ConsoleRE::GFxValue posArray[5]{ widget_xpos, widget_ypos, widget_rotation, widget_xscale, widget_yscale };
-	ASystemMonitor->Movie->Invoke("monitor.setLocation", nullptr, posArray, 5);
 }
 
 void ASystemMonitor::AdvanceMovie(float f1, uint32_t int1)
 {
+	sprintf(FrameRateString, "Frame Rate: %f, Frame Delta %f, Frame Time: %f", util->FrameRate, util->FrameDelta, util->FrameTime);
+
 	ASystemMonitor::Update();
 	ConsoleRE::IMenu::AdvanceMovie(f1, int1);
 }

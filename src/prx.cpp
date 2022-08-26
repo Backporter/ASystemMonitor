@@ -5,7 +5,9 @@
 #include "../../OrbisUtil/include/Trampoline.h"
 #include "../../OrbisUtil/include/RelocationManager.h"
 #include "../../OrbisUtil/include/INIHandler.h"
+
 #include "Settings.h"
+#include "Hook.h"
 
 EXPORT int module_start(size_t argc, const void* argv)
 {
@@ -29,11 +31,15 @@ EXPORT void PluginInit(PluginInfo* Out)
 
 	/* store the function for use later */
 	API::PushPluginAPI = Out->_PushPluginAPI;
+
+	assert(Trampoline::g_Trampoline.SystemAllocate());
 }
 
 EXPORT void PluginStart()
 {
 	Settings::Settings::Singleton()->Load();
+	Hooks::ApplyHook();
+
 	Log::Log::GetSingleton()->Write("ASystemMonitor Loaded");
 	Log::Log::GetSingleton()->Close();
 }

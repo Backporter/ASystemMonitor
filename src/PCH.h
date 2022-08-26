@@ -1,13 +1,14 @@
 #pragma once
 
-
-
 // OrbisUtil's
 #include "../../OrbisUtil/include/Macro.h"
 #include "../../OrbisUtil/include/MessageHandler.h"
-
+#include "../../OrbisUtil/include/Relocation.h"
+#include "../../OrbisUtil/include/Trampoline.h"
 
 // CSEL's
+#include "../../CSEL/runetime/source/F/FramerateTracker.h"
+
 #include "../../CSEL/source/C/ControlMap.h"
 #include "../../CSEL/source/B/BSTEvent.h"
 #include "../../CSEL/source/M/MenuOpenCloseEvent.h"

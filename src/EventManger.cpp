@@ -19,25 +19,25 @@ namespace Events
 				}
 			}
 			
-			// else if (a_event->Name == menustrings->raceSexMenu && !a_event->IsOpening)
-			// {
-			// 	ASystemMonitor::Show();
-			// }
-			// 
-			// else if (a_event->Name == menustrings->loadingMenu && !a_event->IsOpening)
-			// {
-			// 	ASystemMonitor::Show();
-			// }
-			// 
-			// if (a_event->Name == menustrings->containerMenu && a_event->IsOpening)
-			// {
-			// 	ASystemMonitor::Hide();
-			// }
-			// 
-			// if (a_event->Name == menustrings->journalMenu)
-			// {
-			// 	Settings::Settings::Singleton()->Load();
-			// }
+			else if (a_event->Name == menustrings->raceSexMenu && !a_event->IsOpening)
+			{
+				ASystemMonitor::Show();
+			}
+			
+			else if (a_event->Name == menustrings->loadingMenu && !a_event->IsOpening)
+			{
+				ASystemMonitor::Show();
+			}
+			
+			if (a_event->Name == menustrings->containerMenu && a_event->IsOpening)
+			{
+				ASystemMonitor::Hide();
+			}
+			
+			if (a_event->Name == menustrings->journalMenu)
+			{
+				Settings::Settings::Singleton()->Load();
+			}
 		}
 
 		auto controlMap = ConsoleRE::ControlMap::GetSingleton();

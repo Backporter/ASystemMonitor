@@ -3,6 +3,11 @@
 #include "PCH.h"
 #include "Settings.h"
 
+static ConsoleRE::GFxValue SetFrameRateHUDString;
+static bool IsSet{ false };
+static char FrameRateString[8192];
+static FrameUtil::Tracker* util;
+
 class ASystemMonitor : ConsoleRE::IMenu
 {
 public:
@@ -15,7 +20,6 @@ public:
 	static void Show();
 	static void Hide();
 	static void Update();
-	static void ApplyLayout(ConsoleRE::IMenu* ASystemMonitor);
 	static void ToggleVisibility(bool mode);
 
 	static ConsoleRE::IMenu* Creator() { return new ASystemMonitor(); };
