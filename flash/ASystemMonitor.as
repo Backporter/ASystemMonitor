@@ -1,4 +1,4 @@
-﻿class ASystemMonitor extends MovieClip
+﻿	class ASystemMonitor extends MovieClip
 {
 	var FrameRateHUDString:TextField;
 	var loading:Boolean;
