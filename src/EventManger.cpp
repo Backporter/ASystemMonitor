@@ -38,6 +38,15 @@ namespace Events
 			{
 				Settings::Settings::Singleton()->Load();
 			}
+
+			if (a_event->Name == menustrings->tweenMenu && a_event->IsOpening)
+			{
+				ASystemMonitor::Hide();
+			}
+			else if (a_event->Name == menustrings->tweenMenu && !a_event->IsOpening)
+			{
+				ASystemMonitor::Show();
+			}
 		}
 
 		auto controlMap = ConsoleRE::ControlMap::GetSingleton();
