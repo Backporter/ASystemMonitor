@@ -18,48 +18,15 @@ namespace Events
 					ASystemMonitor::Hide();
 				}
 			}
-			
+
 			else if (a_event->Name == menustrings->raceSexMenu && !a_event->IsOpening)
 			{
 				ASystemMonitor::Show();
 			}
-			
+
 			else if (a_event->Name == menustrings->loadingMenu && !a_event->IsOpening)
 			{
 				ASystemMonitor::Show();
-			}
-			
-			if (a_event->Name == menustrings->containerMenu && a_event->IsOpening)
-			{
-				ASystemMonitor::Hide();
-			}
-			
-			if (a_event->Name == menustrings->journalMenu)
-			{
-				Settings::Settings::Singleton()->Load();
-			}
-
-			if (a_event->Name == menustrings->tweenMenu && a_event->IsOpening)
-			{
-				ASystemMonitor::Hide();
-			}
-			else if (a_event->Name == menustrings->tweenMenu && !a_event->IsOpening)
-			{
-				ASystemMonitor::Show();
-			}
-		}
-
-		auto controlMap = ConsoleRE::ControlMap::GetSingleton();
-		if (controlMap)
-		{
-			auto& priorityStack = controlMap->contextPriorityStack;
-			if (priorityStack.empty() || (priorityStack.back() != 0 && priorityStack.back() != 6 && priorityStack.back() != 2))
-			{
-				ASystemMonitor::ToggleVisibility(false);
-			}
-			else
-			{
-				ASystemMonitor::ToggleVisibility(true);
 			}
 		}
 

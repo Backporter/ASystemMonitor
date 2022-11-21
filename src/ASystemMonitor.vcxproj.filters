@@ -4,9 +4,6 @@
     <Filter Include="Main">
       <UniqueIdentifier>{d7823d65-d2ba-47fe-988d-09936112578c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="API">
-      <UniqueIdentifier>{65e71238-33db-4017-8d92-4212244b16e6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ASystemMonitor">
       <UniqueIdentifier>{c102b13d-6c1d-4115-9f69-0c19b5cfa22b}</UniqueIdentifier>
     </Filter>
@@ -24,9 +21,6 @@
     <ClCompile Include="prx.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="API.cpp">
-      <Filter>API</Filter>
-    </ClCompile>
     <ClCompile Include="ASystemMonitor.cpp">
       <Filter>ASystemMonitor</Filter>
     </ClCompile>
@@ -38,14 +32,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="API.h">
-      <Filter>API</Filter>
-    </ClInclude>
     <ClInclude Include="ASystemMonitor.h">
       <Filter>ASystemMonitor</Filter>
-    </ClInclude>
-    <ClInclude Include="PCH.h">
-      <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="EventManger.h">
       <Filter>Events</Filter>
@@ -56,5 +44,6 @@
     <ClInclude Include="Hook.h">
       <Filter>Hooks</Filter>
     </ClInclude>
+    <ClInclude Include="PCH.h" />
   </ItemGroup>
 </Project>

@@ -2,13 +2,16 @@
 
 ASystemMonitor::ASystemMonitor()
 {
-	auto ScaleformManger = ConsoleRE::GFxLoader::GetSingleton();
+	auto ScaleformManger = ConsoleRE::BSScaleformManager::GetSingleton();
 	
-	this->menuFlags |= ConsoleRE::UI_MENU_FLAGS::kAlwaysOpen;
-	this->menuFlags |= ConsoleRE::UI_MENU_FLAGS::kRequiresUpdate;
-	this->menuFlags |= ConsoleRE::UI_MENU_FLAGS::kAllowSaving;
+	depthPriority = 0;
+	inputContext = 0;
 
-	if (this->Movie)
+	menuFlags |= ConsoleRE::UI_MENU_FLAGS::kAlwaysOpen;
+	menuFlags |= ConsoleRE::UI_MENU_FLAGS::kRequiresUpdate;
+	menuFlags |= ConsoleRE::UI_MENU_FLAGS::kAllowSaving;
+
+	if (Movie)
 	{
 		Movie->SetMouseCursorCount(0);
 	}

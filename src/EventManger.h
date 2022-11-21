@@ -21,5 +21,9 @@ namespace Events
 			ConsoleRE::UI::GetSingleton()->GetEventSource<ConsoleRE::MenuOpenCloseEvent>()->AddEventSink(ASystemMonitorEventHandler::GetSingleton());
 		}
 
+		static void Unregister()
+		{
+			ConsoleRE::UI::GetSingleton()->GetEventSource<ConsoleRE::MenuOpenCloseEvent>()->RemoveEventSink(ASystemMonitorEventHandler::GetSingleton());
+		}
 	};
 }

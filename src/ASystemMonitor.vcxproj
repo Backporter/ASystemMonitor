@@ -46,7 +46,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'">
-    <OutDir>C:\Users\kernel\Desktop\OrbisLibBGS\ConvertPRX2SELF\CUSA30258-app</OutDir>
+    <OutDir>$(ProjectDir)..\..\ConvertPRX2SELF\CUSA30258-app</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ORBIS'">
     <OutDir>C:\Users\kernel\Desktop\OrbisLibBGS\ConvertPRX2SELF\CUSA30258-app</OutDir>
@@ -64,7 +64,8 @@
       <AdditionalDependencies>-lScePad_stub_weak;-lSceVideoOut_stub_weak;-lkernel_stub_weak;-lSceSystemService_stub_weak;-lScePosix_stub_weak;-lSceNet_stub_weak;-lSceNetCtl_stub_weak;-lSceNetDebug_stub_weak;-lSceHttp_stub_weak;-lSceSaveData_stub_weak;-lSceUserService_stub_weak;-lSceSystemService_stub;-lSceRtc_stub_weak;-lSceNpTrophy_stub_weak;-lSceSysmodule_stub_weak;-lSceAppContent_stub_weak;-lSceAudioOut_stub_weak;-lSceFios2_stub_weak;-lSceMsgDialog_stub_weak;-lSceCommonDialog_stub_weak;-lSceImeDialog_stub_weak;-lSceErrorDialog_stub_weak;-lSceNpManager_stub_weak;-lSceGnmDriver_stub_weak;-lSceGnm;-lSceGnmx;-lSceGpuAddress;-lSceRazorCpu_stub_weak;-lSceNpAuth_stub_weak;-lSceCoredump_stub_weak;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>"C:\Windows\explorer.exe" "C:\Users\kernel\Desktop\OrbisLibBGS\ConvertPRX2SELF\CUSA30258-app"</Command>
+      <Command>"C:\Users\kernel\Desktop\OrbisLibBGS\ConvertPRX2SELF\build_extract_plugin.bat" $(ProjectName)
+"C:\Windows\explorer.exe" "C:\Users\kernel\Desktop\OrbisLibBGS\ConvertPRX2SELF\CUSA30258-app"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ORBIS'">
@@ -78,7 +79,6 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="API.cpp" />
     <ClCompile Include="ASystemMonitor.cpp" />
     <ClCompile Include="EventManger.cpp" />
     <ClCompile Include="Hook.cpp" />
@@ -93,7 +93,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="API.h" />
     <ClInclude Include="ASystemMonitor.h" />
     <ClInclude Include="EventManger.h" />
     <ClInclude Include="Hook.h" />

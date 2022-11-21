@@ -9,16 +9,6 @@ namespace Settings
 	struct Options
 	{
 	public:
-		bool bShowFrameRate;
-		bool bShowFrameTime;
-		bool bShowFrameDelta;
-		bool pad04;
-
-		float widget_xpos;     //  { 961.0f  };
-		float widget_ypos;     //  { 1040.0f };
-		float widget_rotation; //  { 0.0f    };
-		float widget_xscale;   //  { 75.0f   };
-		float widget_yscale;   //  { 75.0f   };
 	};
 
 	class Settings
@@ -61,29 +51,11 @@ namespace Settings
 				m_ini = INIReader(path);
 				if (m_ini.ParseError() == 0)
 				{
-					// TBA
-
-					// m_options.bShowFrameRate  = m_ini.GetBoolean("Settings", "bShowFrameRate", true);
-					// m_options.bShowFrameTime  = m_ini.GetBoolean("Settings", "bShowFrameTime", true);
-					// m_options.bShowFrameDelta = m_ini.GetBoolean("Settings", "bShowFrameDelta", true);
-
-					m_options.widget_xpos     = m_ini.GetFloat("POS", "X",  961.0f  );
-					m_options.widget_ypos     = m_ini.GetFloat("POS", "Y",  1040.0f );
-					m_options.widget_rotation = m_ini.GetFloat("POS", "R",  0.0f    );
-					m_options.widget_xscale   = m_ini.GetFloat("POS", "XS", 75.0f   );
-					m_options.widget_yscale   = m_ini.GetFloat("POS", "YS", 75.0f   );
-
 					return true;
 				}
 			}
 			else
 			{
-				m_options.widget_xpos = 961.0f;
-				m_options.widget_ypos = 1040.0f;
-				m_options.widget_rotation = 0.0f;
-				m_options.widget_xscale = 75.0f;
-				m_options.widget_yscale = 75.0f;
-
 				return false;
 			}
 
