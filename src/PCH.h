@@ -6,6 +6,8 @@
 #include "../../OrbisUtil/include/Relocation.h"
 #include "../../OrbisUtil/include/Trampoline.h"
 #include "../../OrbisUtil/include/FramerateTracker.h"
+#include "../../OrbisUtil/include/MemoryUsageTracker.h"
+
 
 // CSEL's
 #include "../../CSEL/source/C/ControlMap.h"

@@ -1,5 +1,7 @@
 #include "Hook.h"
 
+#include "../../CSEL/runetime/Internal/Plugin/API.h"
+
 #if __ORBIS__
 #include <gnm.h>
 #define submitAndFlipCommandBuffers sce::Gnm::submitAndFlipCommandBuffers
@@ -18,6 +20,7 @@ namespace Hooks
 	{
 		auto ret = submitAndFlipCommandBuffers(count, dcbGpuAddrs, dcbSizesInBytes, ccbGpuAddrs, ccbSizesInBytes, videoOutHandle, displayBufferIndex, flipMode, flipArg);
 		FrameUtil::Tracker::GetSingleton()->Update();
+		MemoryUtil::MemoryUsageTracker::GetSingleton()->Update();
 		return ret;
 	}
 
@@ -28,7 +31,7 @@ namespace Hooks
 
 	void ApplyHook()
 	{
-		Trampoline::g_Trampoline.WriteJMP<6>(sceGnmSubmitAndFlipCommandBuffersPLTAddress, (uintptr_t)submitAndFlipCommandBuffersHook);
+		API::GetTrampoline().WriteJMP<6>(sceGnmSubmitAndFlipCommandBuffersPLTAddress, (uintptr_t)submitAndFlipCommandBuffersHook);
 	}
 
 	void RevertHooks()

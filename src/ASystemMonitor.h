@@ -3,10 +3,13 @@
 #include "PCH.h"
 #include "Settings.h"
 
-static ConsoleRE::GFxValue SetFrameRateHUDString;
-static bool IsSet{ false };
-static char FrameRateString[8192];
-static FrameUtil::Tracker* util;
+extern bool IsSet;
+static char FrameRateString[8192] { 0 };
+
+extern FrameUtil::Tracker* util;
+extern MemoryUtil::MemoryUsageTracker* memutil;
+extern ConsoleRE::GFxValue SetFrameRateHUDString;
+
 
 class ASystemMonitor : ConsoleRE::IMenu
 {

@@ -30,6 +30,6 @@ namespace Events
 			}
 		}
 
-		return ConsoleRE::BSEventNotifyControl::BST_Continue;
+		return ConsoleRE::BSEventNotifyControl::kContinue;
 	}
 }
